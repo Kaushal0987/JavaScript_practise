@@ -1,0 +1,35 @@
+.form-box{
+ max-width: 600px;
+ margin: 40px auto;
+ padding: 40px;
+ box-shadow: 0 0 22px 0 rgba(0, 0, 0, 0.2);
+}
+
+input{
+ border: 1px solid #ccc;
+ width: 100%;
+ height: 38px;
+ padding: 8px;
+}
+
+.field-group{
+ margin-bottom: 10px;
+}
+
+label{
+ display: block;
+ font-size: 14px;
+}
+
+button{
+ background-color: darkgreen;
+ border: 0;
+ padding: 12px 40px;
+ font-size: 19px;
+ transition: 0.3s;
+}
+
+button:hover{
+ background-color: dark;
+ transform: translateY(-3px);
+}
