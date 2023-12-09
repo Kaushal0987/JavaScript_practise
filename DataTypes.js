@@ -52,3 +52,9 @@ console.log(id);
 
 let largeNUm = 10n
 console.log(typeof(largeNUm));
+
+let arr1 = [ 1, 2, 3]
+let arr2 = [...arr1]
+arr2.push(4)
+console.log("Original array", arr1);
+console.log(arr2);
