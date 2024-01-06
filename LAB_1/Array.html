@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <title>Array</title>
+</head>
+
+<body>
+ <script>
+  // Creating an array using array literal
+  let myArray = [1, 2, 3, 4, 5];
+
+  // Creating an array using the Array constructor
+  let arrayConstructor = new Array(6, 7, 8, 9, 10);
+
+  // Creating an array using the Array.from method
+  let arrayFromMethod = Array.from({ length: 5 }, (_, index) => index + 11);
+
+  // Add data as the first element
+  myArray.unshift(0);
+  console.log('Array after adding data as the first element:', myArray);
+
+  // Add data as the last element
+  myArray.push(6);
+  console.log('Array after adding data as the last element:', myArray);
+
+  // Remove the first element
+  myArray.shift();
+  console.log('Array after removing the first element:', myArray);
+
+  // Remove the last element
+  myArray.pop();
+  console.log('Array after removing the last element:', myArray);
+
+  // Add data at a middle position
+  myArray.splice(2, 0, 7);
+  console.log('Array after adding at middle position:', myArray);
+
+  // Remove from a middle position
+  myArray.splice(2, 1);
+  console.log('Array after removing from middle position:', myArray);
+
+  // forEach method
+  console.log('Using forEach:');
+  myArray.forEach(function (element) {
+   console.log(element);
+  });
+
+  // map method to get square of the elements
+  console.log('Using map method:');
+  let squaredArray = myArray.map(function (element) {
+   return element * element;
+  });
+  console.log('Squared Array (using map):', squaredArray);
+
+  // filter method to get even no from the array
+  console.log('Using flter method:');
+  let evenArray = myArray.filter(function (element) {
+   return element % 2 === 0;
+  });
+  console.log('Even Numbers Array (using filter):', evenArray);
+
+  // reduce method to get sum of the elements
+  console.log('Using reduce method:');
+  let sum = myArray.reduce(function (accumulator, currentValue) {
+   return accumulator + currentValue;
+  }, 0);
+  console.log('Sum of Array (using reduce):', sum);
+
+  // Display data from the array with for-loop 
+  console.log('Displaying data with for-loop:');
+  for (let i = 0; i < myArray.length; i++) {
+   console.log(myArray[i]);
+  }
+
+  // Check length of the array
+  console.log('Length of Array:', myArray.length);
+
+  // Display single element without loop
+  console.log('Single Element (Index 1):', myArray[1]);
+
+  //  Array destructuring
+  let [first, second, ...rest] = myArray;
+  console.log('Destructured Array:', 'First:', first, 'Second:', second, 'Rest:', rest);
+
+ </script>
+</body>
+
+</html>

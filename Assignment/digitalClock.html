@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Digital-Clock</title>
+</head>
+
+<body>
+
+ <div class="title">
+  <h1>Digital Clock</h1>
+ </div>
+
+ <div id="date"></div>
+
+ <script>
+  
+  setInterval(function () {
+
+   let date = new Date();
+   let year = date.getFullYear(),
+    month = date.getMonth(),
+    wday = date.getDay(),
+    mday = date.getDate(),
+    hour = date.getHours(),
+    minute = date.getMinutes(),
+    seconds = date.getSeconds();
+
+    var ampm = (hour <= 12)? "AM" : "PM";
+    hour = (hour < 12) ? hour : (hour-12);
+
+   let months = ["Jan", "Feb", "March", "April", "May", "Jun", "July", "August", "Sep", "Oct", "Nov", "Dec"];
+   let days = ["Sun", "Mon", "Tue", "Wed", "Thus", "Fri", "Sat", "Sun"];
+
+   let fullDate = `${months[month]} ${mday}, ${year} ${hour}:${minute}:${seconds} ${ampm} ${days[wday]} `;
+
+   document.getElementById("date").innerText = fullDate;
+
+  }, 1000);
+
+ </script>
+
+</body>
+</html>

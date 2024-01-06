@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Largest & Smallest Number</title>
+</head>
+
+<body>
+ <script>
+
+  let arr = [2, 8, 6, 4, 8, 5, 1, 7, 25, 12];
+
+  let larNum = arr[0],
+   smallNum = arr[0];
+
+  for (let i = 0; i < arr.length; i++) {
+   if (arr[i] > larNum) {
+    larNum = arr[i];
+   }
+   if (arr[i] < smallNum) {
+    smallNum = arr[i];
+   }
+  }
+
+  console.log(`largest Number is : ${larNum} and Smallest Number is ${smallNum}`);
+
+
+  let num = 5461;
+  let arrDigit = [];
+
+  while (num != 0) {
+   let rem = num % 10;
+   arrDigit.push(rem);
+   num = num / 10;
+  }
+
+  for (let i = 0; i < arrDigit.length; i++) {
+   if (arrDigit[i] > larNum) {
+    larNum = arrDigit[i];
+   }
+   if (arrDigit[i] < smallNum) {
+    smallNum = arrDigit[i];
+   }
+  }
+
+  console.log(`largest Number is : ${larNum} and Smallest Number is ${smallNum}`);
+  
+ </script>
+</body>
+
+</html>

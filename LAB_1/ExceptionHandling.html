@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Exception Handling</title>
+</head>
+
+<body>
+ <script>
+
+  try {
+   let result = 10 / 0;  // This will throw a division by zero error
+   console.log(result);  // This will not be executed if an exception occurs
+  } catch (error) {
+   // Code to handle the exception
+   console.error('An error occurred:', error.message);
+  } finally {
+   // Code that will be executed regardless of whether an exception occurred
+   console.log('This will always be executed.');
+  }
+
+ </script>
+</body>
+
+</html>

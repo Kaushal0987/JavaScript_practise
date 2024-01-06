@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Style & Dom Manipulation</title>
+</head>
+
+<body>
+
+ <h1>Style & Dom Manipulation</h1>
+
+ <p id="Paragraph">This is a paragraph.</p>
+ <button onclick="changeColorAndManipulate()">Change Color & Manipulate DOM</button>
+
+ <script>
+  function changeColorAndManipulate() {
+   let paragraph = document.getElementById('Paragraph');
+
+   paragraph.style.backgroundColor = 'lightgreen';
+
+   let newSpan = document.createElement('span');
+   newSpan.innerHTML = 'This is a dynamically created span.';
+
+   paragraph.appendChild(newSpan);
+
+   let anotherSpan = document.createElement('span');
+   anotherSpan.innerHTML = 'This is another dynamically created span.';
+   paragraph.prepend(anotherSpan);
+
+   let firstChild = paragraph.firstElementChild;
+   if (firstChild) {
+    paragraph.removeChild(firstChild);
+   }
+  }
+ </script>
+
+</body>
+
+</html>

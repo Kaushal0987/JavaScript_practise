@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Pattern</title>
+ <style>
+  h1 {
+   font-size: 20px;
+  }
+
+  p {
+   font-size: 10px;
+  }
+
+  fieldset {
+   width: 60px;
+   height: 260px;
+  }
+ </style>
+</head>
+
+<body>
+ <fieldset>
+ <h1>Pattern</h1>
+
+ <script>
+
+  let txt = "UNIVERSITY";
+  let arrtxt = Array.from(txt);
+
+  console.log(arrtxt);
+
+  for (let i = 0; i <= arrtxt.length; i++) {
+   for (let j = 0; j < i; j++) {
+    document.write(`${arrtxt[j]}`);
+   }
+   document.write(`<br>`);
+  }
+
+ </script>
+
+</fieldset>
+</body>
+
+</html>

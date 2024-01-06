@@ -18,27 +18,27 @@ photo.parentElement.append(errPhoto); // append(after all child), prepend(before
 // adding event on user input using form event : submit
 form.addEventListener("submit", function(e){
  if (fullname.value == ""){
+  e.preventDefault();
   console.log("fullname needed");
   this.nextElementSibling.innerText = "fullname needed";
-  e.preventDefault();
  } 
  console.log("Fullname: ",fullname.value)
 })
 
 form.addEventListener("submit", function(e){
  if (email.value == ""){
+  e.preventDefault();
   console.log("email needed");
   this.nextElementSibling.innerText = "email needed";
-  e.preventDefault();
  } 
  console.log("email: ",email.value)
 })
 
  form.addEventListener("submit", function(e){
   if (photo.value == ""){
+   e.preventDefault();
    console.log("photo needed");
    this.nextElementSibling.innerText = "photo needed";
-   e.preventDefault();
   } 
   console.log("photo: ",photo.value)
  })

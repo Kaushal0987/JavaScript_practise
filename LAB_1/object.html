@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Object</title>
+</head>
+
+<body>
+ <script>
+
+  // Built-in Object
+
+  //1.Object:
+  var myObject = { key: 'value' };
+
+  // 2.Array:
+  let myArray = [1, 2, 3, 4, 5];
+
+  //3.String:
+  let myString = 'Hello, World!';
+
+  //4.Number:
+  let myNumber = 42;
+
+  //5.Boolean:
+  let isTrue = true;
+
+  //6.Function:
+  function myFunction() {
+   // function body
+  }
+
+  //7.Date:
+  let currentDate = new Date();
+
+  //8.RegExp:
+  let regex = /[a-z]+/;
+
+  // Creating an object using object literal
+  var myObject = {
+   prop1: 'value1',
+   prop2: 'value2',
+   prop3: 'value3'
+  };
+
+  // Check prototypes of Object()
+  console.log(Object.prototype);
+
+  // Add data as a new element at the beginning
+  myObject.newKey = 'newValue';
+  console.log('Object after adding element at first:', myObject);
+
+  // Add data as a new element at the end
+  myObject.anotherKey = 'anotherValue';
+  console.log('Object after adding element at last:', myObject);
+  
+  // Add data at a middle position
+  myObject.middleKey = 'middleValue';
+  console.log('Object after adding element at a middle position:', myObject);
+  
+  // Remove the first element
+  delete myObject.key1;
+  console.log('Object after removing first element:', myObject);
+
+  // Remove the last element
+  delete myObject.anotherKey;
+  console.log('Object after removing last element:', myObject);
+
+  // Remove data from a middle position
+  delete myObject.middleKey;
+  console.log('Object after removing element from a middle position:', myObject);
+
+  // Display data from the object with for...in loop
+  console.log('Displaying data with for loop:');
+  for (let key in myObject) {
+   console.log(key + ': ' + myObject[key]);
+  }
+
+  // Display single element without loop
+  console.log('Single element (prop2):', myObject.prop2);
+
+  // Object destructuring
+  let { prop2, newProp, ...rest } = myObject;
+  console.log('Destructured Object:', 'prop2:', prop2, 'newProp:', newProp, 'Rest:', rest);
+
+ </script>
+</body>
+
+</html>

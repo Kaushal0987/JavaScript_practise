@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>JS Types</title>
+</head>
+
+<body>
+ <script>
+
+  // 1. Dynamic Typing:
+  //JavaScript is loosely typed or dynamically typed.This means that you don't need to explicitly declare the data type of a variable when you declare it. The type of a variable is determined at runtime based on the value it holds.
+  let x = 5;       // x is a number
+  let y = 'Hello'; // y is a string
+  x = 'World';
+
+  // 2. Primitive Types:
+  console.log(typeof 12);    // Output: 'number'
+  console.log(typeof "name");   // Output: 'string'
+  console.log(typeof isStudent); // Output: 'boolean'
+  console.log(typeof null); // Output: 'null'
+
+  // 5. Type Coercion:
+  let result = '5' + 3; // JavaScript will convert 3 to a string and concatenate: '53'
+
+  // 3. Object Types:
+
+  //a. Object:
+  let person = {
+   name: 'Alice',
+   age: 30
+  };
+
+  // b.Array:
+  let fruits = ['apple', 'banana', 'orange'];
+
+  // c.Function:
+  function add(a, b) {
+   return a + b;
+  }
+
+ </script>
+</body>
+
+</html>

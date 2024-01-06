@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>JS Errors</title>
+</head>
+
+<body>
+ <script>
+
+  // Error Types
+
+  //1. SyntaxError:
+  //Occurs when there is a mistake in the syntax of the code.
+
+  try {
+   // SyntaxError: Missing closing parenthesis
+   let result = eval('(5 + 2');
+   console.log(result);
+  } catch (error) {
+   console.error('SyntaxError:', error.message);
+  }
+
+  //2. ReferenceError:
+  //Occurs when trying to reference a variable or function that is not declared.
+
+  try {
+   // ReferenceError: variable is not defined
+   console.log(undefinedVariable);
+  } catch (error) {
+   console.error('ReferenceError:', error.message);
+  }
+
+  //3. TypeError:
+  //Occurs when a value is not of the expected type.
+
+  try {
+   // TypeError: Cannot read property 'length' of undefined
+   let undefinedValue = undefined;
+   console.log(undefinedValue.length);
+  } catch (error) {
+   console.error('TypeError:', error.message);
+  }
+
+  //4. RangeError:
+  //Occurs when a numeric variable or parameter is outside its valid range.
+
+  try {
+   // RangeError: Invalid array length
+   let arr = new Array(-1);
+  } catch (error) {
+   console.error('RangeError:', error.message);
+  }
+
+  //5. Error:
+  //The generic error constructor. All other error types inherit from this one.
+
+  try {
+   // Custom error using the generic Error constructor
+   throw new Error('This is a custom error.');
+  } catch (error) {
+   console.error('Error:', error.message);
+  }
+
+  //6. EvalError:
+  //This error is deprecated, and it's not used in modern JavaScript.
+
+  try {
+   // EvalError: No code to evaluate
+   throw new EvalError('No code to evaluate.');
+  } catch (error) {
+   console.error('EvalError:', error.message);
+  }
+
+  //Custom Error:
+  class CustomError extends Error {
+   constructor(message) {
+    super(message);
+    this.name = 'CustomError';
+   }
+  }
+
+  try {
+   throw new CustomError('This is a custom error.');
+  } catch (error) {
+   if (error instanceof CustomError) {
+    console.error('Custom Error:', error.message);
+   } else {
+    console.error('Unknown Error:', error.message);
+   }
+  }
+
+ </script>
+</body>
+
+</html>

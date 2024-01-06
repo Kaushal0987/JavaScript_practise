@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>JavaScript Events Demo</title>
+ <style>
+  #demo {
+   width: 200px;
+   padding: 10px;
+   border: 1px solid #ccc;
+   text-align: center;
+   cursor: pointer;
+  }
+ </style>
+</head>
+
+<body>
+
+ <h1>JavaScript Events Demo</h1>
+
+ <div id="demo">Click me!</div>
+
+ <script>
+  // Function to handle the click event
+  function handleClick() {
+   alert('Element clicked!');
+  }
+
+  // Function to handle the mouseover event
+  function handleMouseOver() {
+   document.getElementById('demo').style.backgroundColor = 'lightgray';
+  }
+
+  // Function to handle the mouseout event
+  function handleMouseOut() {
+   document.getElementById('demo').style.backgroundColor = 'white';
+  }
+
+  // Add event listeners to the element
+  document.getElementById('demo').addEventListener('click', handleClick);
+  document.getElementById('demo').addEventListener('mouseover', handleMouseOver);
+  document.getElementById('demo').addEventListener('mouseout', handleMouseOut);
+ </script>
+
+</body>
+
+</html>

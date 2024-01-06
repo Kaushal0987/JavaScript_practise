@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Window Load and DOM Content Loaded Events</title>
+</head>
+
+<body>
+
+ <h1>Window Load and DOM Content Loaded Events</h1>
+
+ <script>
+
+  // Using window.onload event
+  window.onload = function () {
+   console.log('Window is fully loaded.');
+   // You can perform actions that require all external resources (like images) to be loaded here.
+  };
+
+  // Using DOMContentLoaded event
+  document.addEventListener('DOMContentLoaded', function () {
+   console.log('DOM content is ready.');
+   // You can perform actions that require only the DOM to be ready here.
+  });
+
+  console.log('This code runs immediately.');
+
+  setTimeout(function () {
+   console.log('Long-running task completed.');
+  }, 2000);
+
+ </script>
+
+</body>
+
+</html>

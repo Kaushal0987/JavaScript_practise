@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>js properties</title>
+</head>
+
+<body>
+ <script>
+
+  // 1.JavaScript Closure:
+
+  function outerFunction() {
+   let outerVariable = 'I am from the outer function';
+
+   function innerFunction() {
+    console.log(outerVariable);
+   }
+
+   return innerFunction;
+  }
+
+  // Create a closure by calling outerFunction
+  let closure = outerFunction();
+
+  // Invoke the closure, it still has access to outerVariable
+  closure();  // Output: 'I am from the outer function'
+
+
+  // 2. JavaScript Hoisting:
+
+  console.log(x);  // Output: undefined
+  var x = 5;
+  console.log(x);  // Output: 5
+
+  // Function declaration is also hoisted
+  foo();  // Output: 'Hello, I am foo!'
+  function foo() {
+   console.log('Hello, I am foo!');
+  }
+
+
+  // 3.Variable Scope:
+
+  function example() {
+   var localVar = 'I am a local variable';
+   console.log(localVar);
+  }
+
+  example();  // Output: 'I am a local variable'
+
+  console.log(localVar);  // Error: localVar is not defined
+
+
+
+  // 4.Callback Function:
+
+  function fetchData(callback) {
+   // Simulating an asynchronous operation
+   setTimeout(function () {
+    console.log('Data fetched!');
+    callback();
+   }, 2000);
+  }
+
+  function processCallback() {
+   console.log('Processing the fetched data...');
+  }
+
+  // Using fetchData with a callback
+  fetchData(processCallback);
+
+
+  // 5.Object Literals vs. Constructor:
+
+  // a. Object Literals:
+  // Object literals are a way to create objects in a concise manner.
+  var person = {
+   name: 'John',
+   age: 30,
+   sayHello: function () {
+    console.log('Hello, my name is ' + this.name);
+   }
+  };
+
+  person.sayHello();  // Output: 'Hello, my name is John'
+
+  //b. Constructor:
+  //Constructors are functions used with the new keyword to create instances of objects. They provide a blueprint for creating multiple objects with similar properties and methods.
+  function Person(name, age) {
+   this.name = name;
+   this.age = age;
+   this.sayHello = function () {
+    console.log('Hello, my name is ' + this.name);
+   };
+  }
+
+  var person1 = new Person('John', 30);
+  var person2 = new Person('Alice', 25);
+
+  person1.sayHello();  // Output: 'Hello, my name is John'
+  person2.sayHello();  // Output: 'Hello, my name is Alice'
+
+ </script>
+</body>
+
+</html>

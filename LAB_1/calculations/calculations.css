@@ -1,0 +1,33 @@
+.field{
+ max-width: 500px;
+ margin: 20px auto;
+ padding: 20px;
+ box-shadow: 0 0 22px 0 rgba(0, 0, 0, 0.2);
+ border-radius: 20px;
+ font-size: 16px;
+ text-align: center;
+ background-color: whitesmoke;
+}
+
+input{
+ margin: 20px 15px;
+ width: 30%;
+ height: 20px;
+ padding: 10px;
+}
+
+button{
+ background-color: darkcyan;
+ border: 0;
+ border-radius: 10px;
+ margin: 10px 5px;
+ padding: 12px 14px;
+ font-size: 14px;
+ color: white;
+ transition: 0.3s;
+}
+
+button:hover{
+ background-color: dark;
+ transform: translateY(-3px);
+}

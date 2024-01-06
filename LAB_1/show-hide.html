@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Show/Hide Paragraph</title>
+</head>
+
+<body>
+
+ <h1>Show/Hide Paragraph</h1>
+
+ <p id="Paragraph">This is the paragraph content.</p>
+ <button onclick="toggleParagraph()">Toggle Paragraph</button>
+
+ <script>
+  function toggleParagraph() {
+   let paragraph = document.getElementById('Paragraph');
+
+   if (paragraph.style.display === 'none' || paragraph.style.display === '') {
+    paragraph.style.display = 'block'; // Show the paragraph
+   } else {
+    paragraph.style.display = 'none'; // Hide the paragraph
+   }
+  }
+ </script>
+
+</body>
+
+</html>

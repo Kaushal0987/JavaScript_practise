@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>form-validation</title>
+</head>
+
+<body>
+ <div class="form-box">
+  <h1>Signup Form</h1>
+  <div class="form-text">
+   <p>Enter Your Details</p>
+  </div>
+
+  <fieldset> 
+   <legend>Register</legend>
+
+   <form action="" method="post" enctype="multipart/form-data" name="signup_form">
+    <div class="field-group">
+     <input type="text" name="fullname" id="fullname" value="" placeholder="Fullname">
+    </div>
+
+    <div class="field-group">
+     <input type="email" name="email" id="email" value="" placeholder="email">
+    </div>
+
+    <div class="field-group">
+     <input type="text" name="username" id="username" value="" placeholder ="Username">
+    </div>
+
+    <div class="field-group">
+     <select name="service" id="service">
+      <label for="service">Service</label>
+      <option value="webDevelopment">Web Devlopment</option>
+      <option value="appDevelopment">Application Devlopment</option>
+     </select>
+    </div>
+
+    <div class="field-group">
+     <input type="text" name="password" id="password" value="" placeholder ="Password">
+    </div>
+
+    <div class="field-group">
+     <textarea name="comment" id="comment" cols="30" rows="10">Write your comment</textarea>
+    </div>
+
+    <div class="field-group">
+     <input type="checkbox" name="term" id="term" value="agree">
+    </div>
+
+    <button name="signup" type="submit">Signup</button>
+
+   </form>
+  </fieldset>
+ </div>
+</body>
+
+</html>

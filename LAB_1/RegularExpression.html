@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Regular Expression</title>
+</head>
+
+<body>
+ <script>
+
+  // Using the RegExp constructor
+  let regex1 = new RegExp('pattern');
+
+  // Using the literal notation
+  let regex2 = /pattern/;
+
+  let pattern = /hello/;
+  let text = 'Hello, World!';
+
+  if (pattern.test(text)) {
+   console.log('Pattern found!');
+  } else {
+   console.log('Pattern not found.');
+  }
+
+
+  //   Metacharacters and Quantifiers:
+  // Regular expressions use metacharacters and quantifiers to define more complex patterns.
+  // . (dot): Matches any single character except a newline.
+  // *: Matches 0 or more occurrences of the preceding character.
+  // +: Matches 1 or more occurrences of the preceding character.
+  // ?: Matches 0 or 1 occurrence of the preceding character.
+
+
+  // Character Classes:
+  // Character classes allow you to match any one of a set of characters.
+  // [...]: Matches any one of the characters inside the square brackets.
+
+
+  // Flags:
+  // Regular expressions can have flags to modify their behavior. Common flags include:
+  // i: Case-insensitive matching.
+  // g: Global matching (find all matches rather than stopping after the first match).
+  // m: Multi-line matching.
+
+
+  // Regular Expression Methods:
+  // JavaScript provides methods for working with regular expressions:
+  // test(): Tests for a match in a string. Returns true or false.
+  // exec(): Returns an array containing details about the match or null if no match is found.
+  // match(): Returns an array containing the matched part of the string.
+  // search(): Returns the index of the first match. Returns -1 if no match is found.
+  // replace(): Replaces matched substrings with a specified string.
+
+ </script>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>jQuery Demo</title>
+ <!-- Include jQuery from CDN -->
+ <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+
+<body>
+
+ <h1>jQuery Demo</h1>
+
+ <button id="myButton">Click me!</button>
+
+ <div id="output"></div>
+
+ <!-- jQuery script -->
+ <script>
+  // jQuery document ready function
+  $(document).ready(function () {
+   // Handle button click event
+   $('#myButton').click(function () {
+    // Manipulate the DOM using jQuery
+    $('#output').text('Button clicked!');
+   });
+  });
+ </script>
+
+</body>
+
+</html>

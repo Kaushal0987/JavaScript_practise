@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Spread Operator, Rest Parameter and Function on variable Demo</title>
+</head>
+
+<body>
+ <script>
+
+  // 1. Spread Operator:
+  // The spread operator (...) is used to expand elements of an iterable (e.g., an array) or object into places where multiple elements or key-value pairs are expected.
+
+  // Example 1: Spread in Arrays
+  const arr1 = [1, 2, 3];
+  const arr2 = [...arr1, 4, 5];
+
+  console.log(arr2); // Output: [1, 2, 3, 4, 5]
+
+
+  // 2. Rest Parameter:
+  // The rest parameter (...args) allows a function to accept an indefinite number of arguments as an array.
+
+  // Example: Rest Parameter in a Function
+  function sum(...numbers) {
+   return numbers.reduce((acc, num) => acc + num, 0);
+  }
+
+  console.log(sum(1, 2, 3, 4, 5)); // Output: 15
+
+
+  // 3. Function on Variable:
+  // Functions can be assigned to variables in JavaScript. Here's an example:
+
+  // Example: Function Assigned to a Variable
+  const multiply = function (a, b) {
+   return a * b;
+  };
+
+  console.log(multiply(2, 3)); // Output: 6
+
+ </script>
+</body>
+
+</html>
