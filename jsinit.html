@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage | JS Initialize</title>
+</head>
+<body>
+    <!-- .content>h1.titlestyle1{Homepage}+.text-container>p{This is paragraph} -->
+    <div class="content">
+        <h1 class="titlestyle1">Homepage</h1>
+        <div class="text-container">
+            <p>This is paragraph</p>
+        </div>
+    </div>
+    <button id="showContent">Show Content Block</button>
+    <!-- 
+        Note: Use Console under developer-tool on browser to debug JavaScript. 
+     -->
+    <script type="text/javascript">
+        console.log(Array(), Object());
+        // JS Comment: single line (//...) and multi-line (/* ... */)
+        /*
+        DOM element Selector in JavaScript:
+            - root: document (trigers html)
+                i.e.; document.selectorName
+
+                selectorNames (Methods):
+                - getElementById("idname")
+                - getElementsByClassName("classname")
+                - getElementsByTagName("tagname")
+                - querySelector("CSS Selector")
+                - querySelectorAll("CSS Selector")
+                - form_name or form_name.field_name
+
+            variable making keywords:
+            - var   :   redeclare and redefine is possible
+            - let   :   redeclare is not possible, but redefine is possible
+            - const :   redeclare and redefine both are not possible
+         */
+        //delcare:
+        var a;
+
+        //define:
+        a = 10;
+        a = 5; //redefine
+
+        var a; //redeclare
+        console.log(a); //hoisted data will print = 5
+
+        let contentDiv = document.querySelector(".content");
+        contentDiv.style.border = "2px solid darkgreen";
+        contentDiv.style.backgroundColor = "#F2F2F2";
+        contentDiv.style.padding = "40px";
+        contentDiv.style.boxShadow = "0 0 22px 0 rgba(0, 0, 0, 0.4)";
+        //rgba: red, green, blue, alpha (opac value: 0 - 1)
+
+        let note = document.createElement("div");
+        //adding text on node: innerText, innerHTML
+        note.innerText = "*Note: This is JavaScript practive for client-side scripting.";
+
+        //Adding created node inside existing node or element: append, prepend
+        contentDiv.append(note);
+
+        let btn = document.createElement("button");
+        btn.innerText = "Hide Above Content Block";
+        btn.classList.add("hide");
+        document.body.append(btn);
+
+        
+        // btn.addEventListener("click", function() {}); or
+
+        let hideBtn = document.querySelector(".hide");
+        hideBtn.addEventListener("click", function() {
+            // alert("Hi! I am cliked.");
+            contentDiv.style.display = "none";
+        });
+
+        document.getElementById("showContent").addEventListener("click", function() {
+            contentDiv.style.display = "block";
+        })
+    </script>
+</body>
+</html>

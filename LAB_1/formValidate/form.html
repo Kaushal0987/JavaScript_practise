@@ -5,52 +5,63 @@
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <title>form-validation</title>
+ <link rel="stylesheet" href="form.css">
 </head>
 
 <body>
  <div class="form-box">
-  <h1>Signup Form</h1>
-  <div class="form-text">
-   <p>Enter Your Details</p>
-  </div>
-
+  
   <fieldset> 
    <legend>Register</legend>
+   
+   <form action="" method="post" enctype="multipart/form-data" name="form_signup" novalidate>
+    
+    <div class="left">
 
-   <form action="" method="post" enctype="multipart/form-data" name="signup_form">
-    <div class="field-group">
-     <input type="text" name="fullname" id="fullname" value="" placeholder="Fullname">
+     <div class="field-group">
+      <input type="text" name="fullname" id="fullname" value="" placeholder="Fullname" ><span>*</span>
+     </div>
+     
+     <div class="field-group">
+      <select name="service" id="service">
+       <option label="Services" value=""></option>
+       <option value="webDevelopment">Web Devlopment</option>
+       <option value="appDevelopment">Application Development</option>
+      </select>
+     </div>
+     
+     <div class="field-group">
+      <input type="text" name="username" id="username" value="" placeholder ="Username"><span>*</span>
+     </div>
+     
+    </div>
+    
+    <div class="right">
+
+     <div class="field-group">
+      <input type="email" name="email" id="email" value="" placeholder="email"><span>*</span>
+     </div>
+
+     <div class="field-group">
+      <input type="text" name="password" id="password" value="" placeholder ="Password"><span>*</span>
+     </div>
+
+     
+     <div class="field-group">
+      <input type="text" name="confirm_password" id="confirm_password" value="" placeholder ="Confirm Password"><span>*</span>
+     </div>
+     
     </div>
 
     <div class="field-group">
-     <input type="email" name="email" id="email" value="" placeholder="email">
+     <textarea name="comment" id="comment" cols="49" rows="3" placeholder="Write your comment here"></textarea>
     </div>
 
     <div class="field-group">
-     <input type="text" name="username" id="username" value="" placeholder ="Username">
+     <input type="checkbox" name="term" id="term" value="agree"> <i> I agree to the <a href="#">term and services</a><span>*</span> <br> <span>*</span> Required Fields</i>
     </div>
-
-    <div class="field-group">
-     <select name="service" id="service">
-      <label for="service">Service</label>
-      <option value="webDevelopment">Web Devlopment</option>
-      <option value="appDevelopment">Application Devlopment</option>
-     </select>
-    </div>
-
-    <div class="field-group">
-     <input type="text" name="password" id="password" value="" placeholder ="Password">
-    </div>
-
-    <div class="field-group">
-     <textarea name="comment" id="comment" cols="30" rows="10">Write your comment</textarea>
-    </div>
-
-    <div class="field-group">
-     <input type="checkbox" name="term" id="term" value="agree">
-    </div>
-
-    <button name="signup" type="submit">Signup</button>
+    
+    <button name="signup" type="submit" id="submit">SUBMIT</button>
 
    </form>
   </fieldset>

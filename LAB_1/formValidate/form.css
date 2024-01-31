@@ -1,0 +1,44 @@
+.form-box{
+ max-width: 450px;
+ margin: 20px auto;
+}
+
+.left{
+ float: left;
+ margin: 4px auto;
+}
+
+.right{
+ float: right;
+ margin: 2px auto;
+}
+
+.field-group{
+ /* position: relative; */
+ margin: 6px;
+ padding: 3px;
+}
+/* 
+.field-group > label {
+ position: absolute;
+} */
+
+input[placeholder] {
+ padding: 4px;
+}
+
+textarea[placeholder]{
+ padding: 6px;
+}
+
+span{
+ color: red;
+}
+
+#submit{
+ margin-left: 160px;
+ padding: 8px 15px 4px 15px;
+ border: 0px;
+ background-color: rgb(56, 56, 56);
+ color: white;
+}

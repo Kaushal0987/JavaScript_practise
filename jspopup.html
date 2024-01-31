@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Popup Boxes</title>
+</head>
+<body>
+    <!-- HTML comment multiline -->
+    <style>
+        /* CSS comment multiline */
+    </style>
+    <script>
+        // single line comment 
+        /* ..
+        multiline comment */
+
+        /*
+        JS Popup boxes
+        - Alert : result testing
+        - prompt : user input
+        - confirm : decision making (boolean; true or false) 
+        */
+        alert("Hey! alert.");
+        confirm("Are you sure?");
+        prompt("Enter number n1: ");
+
+        /*
+        Q1. Write a script to print your name reading from user input. 
+        Q2. Write a script to calculate n1 and n2 number.
+        */
+        let name = prompt("Enter your name: ");
+        document.write(name);
+        let n1 = prompt("Enter n1: "),
+            n2 = prompt("Enter n2: ");
+        let sum = eval(`${n1} + ${n2}`);
+        document.write(`<hr>${sum}`);
+
+    </script>
+</body>
+</html>

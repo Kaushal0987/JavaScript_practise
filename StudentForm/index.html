@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students Form</title>
+
+    <!-- 
+        CSS only for this page
+    -->
+    <link rel="stylesheet" href="./Style.css">
+    <link rel="stylesheet" href="./REsponsive.css">
+</head>
+
+<body>
+    <!-- 
+        Using Main As a Warpper ID
+    -->
+    <div id="main">
+        <!-- header -->
+        <header>
+            <h1 class="student_form">
+                Students Form
+            </h1>
+            <div class="line"></div>
+        </header>
+        <!-- form -->
+        <section>
+            <!-- 
+            PersonalImformation
+        -->
+            <form action="#" method="get">
+                <h1 class="head">
+                    Personal Information
+                </h1>
+                <div class="line"></div>
+
+                <div class="fullname">
+                    <!-- 
+    left part
+-->
+                    <div class="left">
+                        <h3>Full Name</h3>
+                    </div>
+                    <div class="right">
+                        <div class="fname">
+                            <label for="fullname">First Name*</label>
+                            <input type="text" name="firstname" placeholder="Enter Your First Name" required>
+                        </div>
+                        <div class="fname">
+                            <label for="fullname">Middle Name*</label>
+                            <input type="text" name="firstname" placeholder="Enter Your Middle Name" required>
+                        </div>
+                        <div class="fname">
+                            <label for="fullname">Last Name*</label>
+                            <input type="text" name="firstname" placeholder="Enter Your Last Name" required required>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact -->
+                <div class="fullname contact">
+                    <!-- 
+    left part
+-->
+                    <div class="left">
+                        <h3>Contact Information</h3>
+                    </div>
+                    <div class="right">
+                        <div class="fname">
+                            <label for="fullname">Mobile Number*</label>
+                            <input type="text" name="firstname" required placeholder="Enter your Mobile number">
+                        </div>
+                        <div class="fname">
+                            <label for="fullname">Email Address*</label>
+                            <input type="text" name="firstname" placeholder="Enter Your First Name" required required>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Address -->
+                <div class="fullname address">
+                    <div class="left">
+                        <h3>Address</h3>
+                    </div>
+                    <div class="right right_col">
+                        <div class="fname streetaddress ">
+                            <label for="streetaddress">Street Address*</label>
+                            <input type="text" name="streetaddress" placeholder="i.e  Babarmal" id="street">
+                        </div>
+                        <div class="address_row">
+                            <div class="fname city">
+                                <label for="city">City*</label>
+                                <input type="text" name="city" placeholder="i.e  Kathmandu">
+                            </div>
+                            <div class="fname city">
+                                <label for="city">Provinces*</label>
+                                <select name="province" id="province">
+                                    <option value="choose">Choose your province</option>
+                                    <option value="Koshi Province">Koshi</option>
+                                    <option value="Madhesh Province">Madhesh</option>
+                                    <option value="Bagmati Province">Bagmati</option>
+                                    <option value="Gandaki Province">Gandaki</option>
+                                    <option value="Lumbini Province">Lumbini</option>
+                                    <option value="Karnali Province">Karnali</option>
+                                    <option value="Sudurpashchim Province">Sudurpashchim</option>
+                                </select>
+                            </div>
+                            <div class="fname city">
+                                <label for="city">Zip Postal Code*</label>
+                                <input type="text" name="city" placeholder="i.e  4400">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="line"></div>
+
+                <!-- ===================
+    Academic Background========================= -->
+                <section>
+                    <h1 class="head academic">
+                        Academic Background
+                    </h1>
+                    <!-- Academic background -->
+                    <div class="fullname academicgap">
+                        <!-- 
+       Previous
+    -->
+                        <div class="left">
+                            <h3>Previous Schools</h3>
+                        </div>
+                        <div class="right">
+                            <div class="fname">
+                                <label for="fullname">School Name*</label>
+                                <input type="text" name="firstname" placeholder="Enter your Previous School Name">
+                            </div>
+                            <div class="fname">
+                                <label for="fullname">Collage Name*</label>
+                                <input type="text" name="firstname" placeholder="Enter Your Previous Collage Name">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fullname contact">
+                        <!-- 
+       Previous
+    -->
+                        <div class="left">
+                            <h3>Grades</h3>
+                        </div>
+                        <div class="right">
+                            <div class="fname">
+                                <label for="fullname">GPA*</label>
+                                <input type="text" name="firstname" id="addressinput">
+                            </div>
+                            <div class="fname">
+                                <label for="fullname">Percentage*</label>
+                                <input type="text" name="firstname" id="addressinput">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <div class="line"></div>
+            
+
+        </section>
+
+
+
+        <!-- Program
+        -->
+        <section>
+            <h1 class="head academic">
+                Program Selection
+            </h1>
+            <!-- Program -->
+            <div class="fullname academicgap">
+                <!-- 
+Previous
+-->
+                <div class="left">
+                    <h3>Choose Your Program</h3>
+                </div>
+                <div class="right">
+                    <select name="program" id="program">
+                        <option value="choose">Choose Your Program/Faculty*</option>
+                        <option value="BCA">BCA</option>
+                        <option value="BCA">BSW</option>
+                        <option value="BCA">BBA</option>
+                        <option value="BCA">BBM</option>
+                        <option value="BCA">BHM</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+        <div class="btn">
+        <input type="reset" name="cancel" value="cancel" id="cancel">
+        <input type="submit" name="submit" id="submit" value="submit">
+    </div>
+    </form>
+    </div>
+
+
+
+
+
+
+    <!-- 
+        JavaScript link
+    -->
+    <script src="./main.js"></script>
+</body>
+
+</html>

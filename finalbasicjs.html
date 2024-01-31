@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outline | Basic JS</title>
+</head>
+<body>
+    <!-- Inline JS handler: ie.: onclick -->
+    <p style="color: red; font-size: 13px;" onclick="alert('Clicked!')">Paragraph with onclick JS handler.</p>
+    <!-- 
+    - script tag uses with html (Internal, External, Inline JS Handler)
+    - script and noscript tags
+     -->
+     <script type="text/javascript">
+        //Internal / Embeded
+        document.write("Text from JavaScript.");
+     </script>
+     <!-- External -->
+     <script src="./path_to_jsfile.js"></script>
+     <noscript>
+        <!-- To notify if your browser doesn't support JS: ie. -->
+        Your browser doesn't support (not enabled) JavaScript.
+        <a href="#" title="">How to enable JS in Browser?</a>
+     </noscript>
+</body>
+</html>

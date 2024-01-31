@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Data Type</title>
+</head>
+<body>
+    <!-- 
+        JS Data types
+        - Primtive (Built-in)
+            - Number, string, boolean, undefined, null 
+            
+        - Non-primtive (User defined)
+            - Funciton, Array, Object (like: Associative Array), Block
+
+            - Associative array: {key: value}, which is not available by default in Array() object
+
+    JS data typing: - Dynamic typing (Run time data type understanding by the interpreter)
+
+    (C/C++ etc... Static data typing) (Takes mentioned data type by Compiler)
+     -->
+     <script type="text/javascript">
+        let a = 10; //It will be recognized while interpreting as a number
+        let status = true; //boolean while interpreting having let keyword
+
+        //calculation
+        let n1, n2, op;
+        n1 = prompt("Enter n1: ");
+        n2 = prompt("Enter n2: ");
+        op = prompt("Enter operator: ");
+
+        //let result = Number(n1) + Number(n2) + op; //ES5 issue
+        let result = eval(`${n1} ${op} ${n2}`); //ES6 success
+        //eval() method only calcualte, no string result
+        document.write(`<hr>n1 + n2 = ${result}`);
+
+        //using Function
+        //ES5 function
+        function calculate(a, b, o) {
+            return eval(`${a} ${o} ${b}`);
+        }
+        let output = calculate(n1, n2, op);
+        document.write(`<hr>n1 + n2 = ${output}`);
+
+        //ES6 function: =>  fat arrow / implies (-> tends to)
+        const calculateData = (a, b, o) => { //fat-arrow function
+            return eval(`${a} ${o} ${b}`);
+        }
+        let outputData = calculateData(n1, n2, op);
+        document.write(`<hr>n1 + n2 = ${outputData}`);
+
+        //User defined data types
+        //Array() : built-in object from JS library
+
+        //Window and Frames
+        console.log(window);
+        /*
+        Client Side - Local storage:
+         - Cookie
+         - Session
+         - Local storage
+         
+        Server side - Local storage
+         - cookie
+
+        */
+       //Cookie = Text string
+       window.cookie = "name:Your Name; Address: Ktm, Nepal";
+       console.log(window.cookie); //normal cookie
+       console.log(window.cookie.split(";")); //converted into array
+     </script>
+
+     <!-- To study JavaScript: 
+    Official document site:  MDN (Mozilla Developer Network) site 
+
+    for cookie:
+    https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie
+
+    Check for cookie data expire time implementation
+-->
+
+
+</body>
+</html>

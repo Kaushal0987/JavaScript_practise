@@ -1,0 +1,82 @@
+@media screen and (max-width: 700px) {
+    .head {
+        font-size: 5vw;
+    }
+    .fullname{
+        flex-direction: column;
+    }
+    .left{
+        width: 100%;
+    }
+    .fullname h1{
+        font-size: .9vw;
+    }
+    .right{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+
+    }
+    .fname input {
+        width: 90vw;
+        height: 15vw;
+    }
+    
+    .address_row{
+        flex-direction: column;
+    }
+    #street{
+        width: 90vw;
+    }
+    #province{
+        width: 90vw;
+        height: 10vw;
+    }
+    #program{
+        width: 90vw;
+    }
+    #addressinput{
+        width: 50vw;
+    }
+}
+
+@media (max-width: 1000px) and (min-width: 700px) {
+    .fullname{
+        flex-direction: column;
+    }
+    .left{
+        width: 100%;
+    }
+    .fullname h1{
+        font-size: .9vw;
+    }
+    .right{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+
+    }
+    .fname input {
+        width: 90vw;
+        height: 10vw;
+    }
+    
+    .address_row{
+        flex-direction: column;
+    }
+    #street{
+        width: 90vw;
+    }
+    #province{
+        width: 90vw;
+        height: 10vw;
+    }
+    #program{
+        width: 90vw;
+    }
+    #addressinput{
+        width: 50vw;
+    }
+}

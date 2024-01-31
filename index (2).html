@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Initial | JS</title>
+</head>
+<body>
+    <div class="content-box">
+        <h1 class="titlestyle1">Homepage</h1>
+        <div class="text-box">
+            <p>This is paragraph.</p>
+        </div>
+    </div>
+    <!-- emmet: emmet.io: short form of HTML typing:
+    ie: p#data>strong{Content} -->
+    <p id="data"></p>
+    <script type="text/javascript">
+        var data = document.getElementById("data");
+        data.innerText = "Text from JS";
+
+        let em = document.createElement("em");
+            em.innerText = "JS created node.";
+
+            // data.append(em);
+            data.prepend(em);
+    </script>
+</body>
+</html>

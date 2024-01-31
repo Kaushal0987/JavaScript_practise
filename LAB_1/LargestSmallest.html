@@ -27,25 +27,37 @@
   console.log(`largest Number is : ${larNum} and Smallest Number is ${smallNum}`);
 
 
-  let num = 5461;
-  let arrDigit = [];
+  let num = 5462;
+
+  let large = num % 10;
+  let small = num % 10;
+   
+  num /= 10;
 
   while (num != 0) {
-   let rem = num % 10;
-   arrDigit.push(rem);
+
+   let rem = Math.round(num % 10);
+
+   if (rem > large) {
+    large = rem;
+   }
+
    num = num / 10;
+
+  }
+  while (num != 0) {
+
+   let rem = Math.ceil(num % 10);
+
+   if (rem < small) {
+    small = rem;
+   }
+
+   num = num / 10;
+
   }
 
-  for (let i = 0; i < arrDigit.length; i++) {
-   if (arrDigit[i] > larNum) {
-    larNum = arrDigit[i];
-   }
-   if (arrDigit[i] < smallNum) {
-    smallNum = arrDigit[i];
-   }
-  }
-
-  console.log(`largest Number is : ${larNum} and Smallest Number is ${smallNum}`);
+  console.log(`largest Number is : ${large} and Smallest Number is ${small}`);
   
  </script>
 </body>
