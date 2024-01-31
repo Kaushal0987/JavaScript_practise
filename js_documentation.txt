@@ -1,0 +1,1170 @@
+JavaScript Basic Notes:
+*Note: You must understand at least listed 20 terminologies below:
+
+#1 JavaScript Introduction
+JavaScript is a scripting or programming language that allows you to implement
+complex features or interactivity on web pages known a clind side dynamic coding.
+
+----------------------------------------
+
+#2 JavaScript Variables
+ES5: (var keyword)
+    var variable_name; //declaration
+
+        variable_name = value; //definition
+
+ES6: (let and const keyword additionally)
+    let variable_name;
+    const variable_name;
+
+Differences:
+- var:      Redeclare and Redefine is possible.
+- let:      Redeclare is not possible, but Redefine is possible.
+- const:    Redeclare and Redefine is not possible.
+
+----------------------------------------
+
+#3 Data Types
+Primitive Data Types (immutable / basic / Elementary)
+     Number, String, Boolean, Symbol, Undefined, NULL
+     Note: Trivial (minor) types: Undefined and NULL
+
+Non-primitive Data Types (mutable / Composite)
+    Object, Date, Array, Function, Map, Weak Map, Set, Weak Set, Regex, Error
+
+But, in JavaScript data-type will not be assigned statically like in C language:
+JavaScript uses Dynamic type  using var, let and const to declare variable,
+
+Which is "Runtime" assignment of datatype.
+Runtime means, datatype will be implement on program execution or run.
+
+
+Dynamic typing
+
+let n = 10; //integer data type
+let f = 2.5; //float data type
+let name = "Yubaraj Rai"; //String
+let status = true; //boolean data type (true or false)
+let gender = 'M'; // Character data type (M/F/N)
+
+
+----------------------------------------
+
+#4 Operators and statement
+
+i. Arithmetic Operators (+, -, *, /, %, ++, --)
+ii. Comparison (Relational) Operators (==, ===, !=, !==, >, >=, <, <=)
+iii. Bitwise Operators (&, |, ^, ~, <<, >>, >>>)
+iv. Logical Operators (&&, ||, !)
+v. Assignment Operators (=, +=, -=, *=, /=, %=)
+vi. Special Operators (?:, ,, delete, in, instanceof, new, typeof, void, yield)
+
+Note: '+' sign of arithmetic operator will work on concatenation also with string.
+
+----------------------------------------
+
+#5 Functions
+ES5:
+function firstFunc() { //declare and definition of function at once
+    console.log("First function!");
+}
+firstFunc(); //calling function
+
+
+ES6 (Fat arrow function, uses variable to lead function name):
+const newFunc = () => { //declare and define
+    console.log("First ES6 Function!");
+}
+newFunc(); //call
+
+Practice for various function lead like:
+    - function without return and argument
+    - function without return, with argument
+    - function with return and argument
+    - function with return, without argument
+
+
+Example of using function:
+Filter array data (Function with return type, without argument)
+
+
+//JS script is case sensitive
+const arrData = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11];
+
+//making function to filter odd numbers of array data
+function arrFilter() {
+    const filterOdd = [];
+    for(var i = 0; i < arrData.length; i++) {
+        if((arrData[i] % 2) == 0) filterOdd.push(arrData[i]);
+    }
+    return filterOdd;
+}
+
+console.log(arrFilter());
+----------------------------------------
+
+#6 Variable Scope:
+
+General:
+• Local Scope (Function Scope)
+• Global Scope
+
+ES6 introduced two important new JavaScript keywords: let and const.
+These two keywords provide Block Scope in JavaScript.
+• Block Scope
+
+
+Additionally:
+• Lexical Scoping (chain of global and local same variable or function parameter usecase.)
+
+    Lexical:
+        Four main models of lexical meaning:
+        - relational,
+        - symbolic,
+        - conceptual and
+        - distributional.
+
+
+Example of lexical scoping:
+
+var scope = "I am global";
+function whatismyscope(){
+   var scope = "I am just a local";
+   function func() {return scope;}
+   return func;
+}
+
+whatismyscope()();
+
+----------------------------------------
+
+#7 Function in variable
+Scenario:
+Define a function that can answer the role of a user. Program has following roles:
+    admin       - with all access
+    subadmin    - with access to create/delete data
+    testprep    - with access to create/delete tests
+    user        - consume all content
+    other       - trial user
+
+Solution:
+
+//create function with parameters.
+function getUserRole(name, role) {
+    switch(role) {
+        case "admin":
+            return `${name} is admin with all access.`;
+            break; // break is not necessary having return
+        case "subadmin":
+            return `${name} is sub-admin with access to create and delte data.`;
+            break;
+        case "testprep":
+            return `${name} is test prep with access to create and delte tests.`;
+            break;
+        case "user":
+            return `${name} is a user to consume content.`;
+            break;
+        default:
+            return `${name} is a trial user.`;
+            break;
+    }
+}
+
+//call function passing arguments and asign it to the variable
+var getRole = getUserRole("Yubaraj", "user");
+
+//checking result, look on the console.
+console.log(getRole);
+
+----------------------------------------
+
+#8 Closure
+A closure is the combination of a function bundled together (enclosed)
+with references to its surrounding state (the lexical environment).
+
+In other words, a closure gives you access
+to an outer function's scope from an inner function.
+
+
+Closure ES5:
+
+let greet = "Hi"; //global variable
+function parent() { // declare and define parent function
+    let mesz = "JavaScript"; //local or function variable
+    function child() { //declare and define child function
+        console.log(greet, mesz); //testing or debuging
+    }
+
+    child(); //calling child function,
+    //Child function behave like a closure, when we call the parent function outside.
+}
+
+parent(); //call parent function
+
+
+
+Closure ES6:
+
+let grt = "Hello";
+let par = (a) => {
+    /**
+    * having global same variable name,
+    * it is possible on local to redeclare
+    * i.e.: grt variable with let keyword
+    */
+    let grt = "Hi";
+   
+    let mesz = "JavaScript";
+    let child = (data) => {
+        console.log(a, mesz, data);
+    }
+
+    return child;
+    //closure uses with return feature on ES6
+}
+
+let callFunc = par(grt);
+callFunc("Learning"); //Result: "Hello JavaScript Learning"
+
+----------------------------------------
+
+#9 Hoisting
+
+i. What is hoisting:
+
+JavaScript Declarations are Hoisted,
+Hoisting is JavaScript's default behavior of moving declarations to the top.
+
+Hoisting in JavaScript is a behavior in which
+a function or a variable can be used before declaration.
+For example,
+
+// using test before declaring
+console.log(test);   // undefined
+var test;
+
+Since the variable test is only declared and has no value,
+undefined value is assigned to it.
+
+Even in general situation, the undefined exist, if value is not defined
+// using test before declaring
+var test;
+console.log(test); // undefined
+
+
+ii. Variable Hoisting
+
+In terms of variables and constants,
+keyword var is hoisted and let and const does not allow hoisting.
+For example,
+
+// program to display value
+a = 5;
+console.log(a);
+var a; // 5
+
+
+In the above example, variable a is used before declaring it.
+And the program works and displays the output 5. The program behaves as:
+
+// program to display value
+var a;
+a = 5;
+console.log(a); // 5
+
+
+
+However in JavaScript, initializations are not hoisted.
+For example:
+
+// program to display value
+console.log(a);
+var a = 5;
+
+Output: undefined
+
+
+The above program behaves as:
+
+var a;
+console.log(a);
+a = 5;
+
+
+Also, when the variable is used inside the function,
+the variable is hoisted only to the top of the function.
+For example:
+
+// program to display value
+var a = 4;
+
+function greet() {
+    b = 'hello';
+    console.log(b); // hello
+    var b;
+}
+
+greet(); // hello
+console.log(b);
+
+
+
+Output:
+hello
+Uncaught ReferenceError: b is not defined
+
+
+
+If a variable is used with the let keyword, that variable is not hoisted.
+For example:
+
+// program to display value
+a = 5;
+console.log(a);
+let a; // error
+
+
+Output:
+Uncaught ReferenceError: Cannot access 'a' before initialization
+
+
+iii. Function Hoisting
+
+A function can be called before declaring it.
+For example:
+
+// program to print the text
+greet();
+function greet() {
+    console.log('Hi, there.');
+}
+
+Output: Hi, there
+
+In the above program,
+the function greet is called before declaring it and the program shows the output.
+This is due to hoisting.
+
+
+However, when a function is used as an expression,
+an error occurs because only declarations are hoisted.
+For example:
+
+// program to print the text
+greet();
+let greet = function() {
+    console.log('Hi, there.');
+}
+
+Output: Uncaught ReferenceError: greet is not defined
+
+
+If var was used in the above program, the error would be:
+Uncaught TypeError: greet is not a function
+
+----------------------------------------
+
+#10 Array and Object
+
+An array is a special variable, which can hold more than one value.
+
+i. Creating an Array:
+const array_name = [item1, item2, ...];  
+
+Spaces and line breaks are not important. A declaration can span multiple lines:
+const cars = [
+  "Saab",
+  "Volvo",
+  "BMW"
+];
+
+You can also create an array, and then provide the elements:
+const cars = [];
+cars[0]= "Saab";
+cars[1]= "Volvo";
+cars[2]= "BMW";
+
+
+ii. Using the JavaScript Keyword new:
+
+const cars = new Array("Saab", "Volvo", "BMW");
+
+
+Note:
+The two examples above do exactly the same.
+There is no need to use new Array().
+For simplicity, readability and execution speed, use the array literal method.
+
+
+iii. Accessing Array Elements:
+
+const cars = ["Saab", "Volvo", "BMW"];
+let car = cars[0];
+
+
+iv. Changing an Array Element:
+This statement changes the value of the first element in cars:
+
+const cars = ["Saab", "Volvo", "BMW"];
+cars[0] = "Opel";
+
+
+v. Arrays are Objects:
+
+Arrays are a special type of objects. The typeof operator in JavaScript returns "object" for arrays.
+But, JavaScript arrays are best described as arrays.
+Arrays use numbers to access its "elements". In this example, person[0] returns John:
+
+Array: const person = ["John", "Doe", 46];
+
+Objects use names to access its "members". In this example, person.firstName returns John:
+
+Object: const person = {firstName:"John", lastName:"Doe", age:46};
+
+
+vi. Array Elements Can Be Objects:
+
+JavaScript variables can be objects. Arrays are special kinds of objects.
+Because of this, you can have variables of different types in the same Array.
+You can have objects in an Array. You can have functions in an Array. You can have arrays in an Array:
+
+myArray[0] = Date.now;
+myArray[1] = myFunction;
+myArray[2] = myCars;
+
+
+vii. Looping Array Elements:
+One way to loop through an array, is using a for loop:
+
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+let fLen = fruits.length;
+
+let text = "<ul>";
+for (let i = 0; i < fLen; i++) {
+  text += "<li>" + fruits[i] + "</li>";
+}
+text += "</ul>";
+
+
+You can also use the Array.forEach() function:
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+let text = "<ul>";
+fruits.forEach(myFunction);
+text += "</ul>";
+
+function myFunction(value) {
+  text += "<li>" + value + "</li>";
+}
+
+
+viii. Associative Arrays:
+
+Many programming languages support arrays with named indexes.
+Arrays with named indexes are called associative arrays (or hashes).
+JavaScript does not support arrays with named indexes.
+In JavaScript, arrays always use numbered indexes.  
+
+const person = [];
+person[0] = "John";
+person[1] = "Doe";
+person[2] = 46;
+person.length;    // Will return 3
+person[0];        // Will return "John"
+
+
+WARNING !!
+If you use named indexes, JavaScript will redefine the array to an object.
+After that, some array methods and properties will produce incorrect results.
+
+const person = [];
+person["firstName"] = "John";
+person["lastName"] = "Doe";
+person["age"] = 46;
+person.length;     // Will return 0
+person[0];         // Will return undefined
+
+
+ix. The Difference Between Arrays and Objects:
+
+In JavaScript, arrays use numbered indexes. objects use named indexes.
+Arrays are a special kind of objects, with numbered indexes.
+
+
+x. When to Use Arrays. When to use Objects:
+
+- JavaScript does not support associative arrays.
+- You should use objects when you want the element names to be strings (text).
+- You should use arrays when you want the element names to be numbers.
+
+
+xi. A Common Error:
+const points = [40]; is not the same as:
+const points = new Array(40);
+
+
+// Create an array with one element:
+const points = [40];
+
+// Create an array with 40 undefined elements:
+const points = new Array(40);
+
+xii. How to Recognize an Array:
+A common question is: How do I know if a variable is an array?
+The problem is that the JavaScript operator typeof returns "object":
+
+const fruits = ["Banana", "Orange", "Apple"];
+let type = typeof fruits;
+
+
+The typeof operator returns object because a JavaScript array is an object.
+
+Solution 1:
+To solve this problem ECMAScript 5 (JavaScript 2009) defined a new method Array.isArray():
+
+Array.isArray(fruits);
+
+Solution 2:
+The instanceof operator returns true if an object is created by a given constructor:
+
+const fruits = ["Banana", "Orange", "Apple"];
+fruits instanceof Array; //It should return 'true'
+
+
+xiii. Additional:
+
+ARRAY
+
+let arr = ["Yubaraj", 9840051645, "Bhojpur, Nepal"]
+
+arr.push("New Item at the End"); //Add element at the end
+arr.unshift("New Item at the Bigining"); //Add element at the begining
+arr.push("Hi Last");
+arr.unshift("Hi First");
+
+arr.pop(); //Remove element from the end
+arr.shift(); //Remove element from the begining
+
+console.log(arr);
+
+//Loop of array to print items dynamically
+//You can check prototype first to know which methods and properties can be used on array.
+
+To check prototype:
+console.log(Array()); //Go and check on console.
+//there you will find inside prototype, map method, forEach method, length property etc...
+
+arr.map(item => {
+    console.log(item);
+});
+
+arr.forEach(item => {
+    console.log(item);
+})
+
+
+
+OBJECT
+
+let usr = {name: "Rai", phn: 9840051645};
+console.log(usr);
+
+//loop on object
+for(let key in usr) {
+    console.log(key);
+    console.log(usr[key]);
+}
+
+
+Array with object elements:
+let user = [
+    {name: "Yubaraj", phone: 9840051645},
+    {name: "Sangam", phone: 9852079777}
+]
+
+Loop:
+
+user.map(data => {
+    console.log(data); //testing
+    for(const key in data) {
+        console.log(data[key]);
+    }
+});
+
+
+Converting Array-Object to JSON
+let userStr = JSON.stringify(user);
+let userJSON = JSON.parse(userStr);
+console.log(userJSON); //It gives JSON document
+//JavaScript Object Notation (JSON)
+
+
+Parser type:
+- SAX parser (Simple API for XML)
+- DOM parser (Document Object Module)
+
+We use "DOM Parser" on JavaScript to manipulate data structure.
+
+----------------------------------------
+
+11. Prototype based inheritance:
+
+let company = {
+    name: "A",
+    pay: function () {
+        console.log("Paying");
+    },
+}; //company object
+
+let worker = {
+    id: 1,
+    work: function () {
+        console.log("Working");
+    },
+}; //worker object
+
+worker.__proto__ = company; //company object extends/inherits into worker object.
+console.log(worker);
+worker.pay(); // calling method of company from worker object works fine after inheritance.
+
+
+_____
+
+Adding new member as a prototype on an object constructor:
+
+//constructor
+function Data() {
+    this.name = "Yubaraj Rai";
+    this.phone = "9840051645";
+}
+
+//Adding new member age from outside of constructor
+Data.prototype.age = 24; //value can be dynamic, currently it is static
+
+_____
+
+Creating custom prototype in JS:
+
+Array.prototype.customFilter = function (fn) {
+    const filtered = [];
+    for (let i = 0; i < this.length; i++) {
+      if (fn(this[i])) {
+        filtered.push(this[i]);
+      }
+    }
+    return filtered;
+};
+
+console.log(Array()); //It shows customFilter inside prototype on console
+
+
+Uses of prototype with dot (.) operator on array data:
+const data = [1, 2, 3, 4, 5];
+
+//filter greater than 2, less than 3 data
+const filteredData = data.customFilter((el) => {
+    if (el > 2) return el;
+});
+
+console.log(filteredData);
+
+
+
+----------------------------------------
+
+12. Object Literals vs. Constructor
+
+Object Literals:
+let comp = {
+    name: "NCIT",
+    payment: function() {
+        return "Paid";
+    }
+}
+
+let work = {
+    name: "Yubaraj Rai",
+    class: function() {
+        return "Taken";
+    }
+}
+
+document.write(comp.name); //accessing object member
+document.write(comp.payment());
+document.write(work.name);
+document.write(work.class());
+
+/** prototype based inheritance */
+work.__proto__ = comp;
+document.write(work.payment());
+
+
+Understanding Constructor:
+
+- Working with object
+- 'this' keyword will be used to maintain code block as a new object
+- mostly, constructor and classes will use PascalCase for identifier naming
+
+Constructor
+function Data() {
+    this.name = "Yubaraj Rai";
+    this.phone = "9840051645";
+}
+
+Adding new member from outside to the constructor
+Data.prototype.age = 24; //value can be dynamic, currently it is static
+
+creating object using constructor
+let d1 = new Data();
+let d2 = new Data();
+
+document.write("<hr/>");
+document.write(d1.name);
+document.write(d1.phone);
+document.write("<hr/>");
+document.write(d2.name);
+document.write(d2.phone);
+
+Note:
+- Object literals allows us to make single object at a time with defined block of code
+- Cosntructure allows us to make multiple object at a time using a block of constructor
+
+
+----------------------------------------
+
+13. Callback
+
+Generally, passing function as an argument to another function
+
+function add() {
+    return "Add function";
+}
+
+function mul() {
+    return "Multiplied data";
+}
+
+function calcCallback(n1, funcName ) {
+    console.log(n1, funcName());
+}
+
+calcCallback(10, add); //passing function as an argument
+calcCallback(5, mul);
+
+OR,
+//sub function
+function mulDynamic(a,b) {
+    return a * b;
+}
+//main function
+function calc(n1, funcName, n2 ) {
+    console.log(funcName(n1,n2)); //checking callback on console
+    //passing values to the mulDynamic function with callback feature from this function.
+}
+
+calc(4, mulDynamic, 4);
+//calling main function which taking function on argument which leads to callback.
+
+----------------------------------------
+
+14. Template Literals/String
+
+Template literals are literals delimited with backtick ( ` ) characters,
+allowing for multi-line strings, string interpolation with embedded expressions,
+and special constructs called tagged templates.
+
+Syntax
+`string text`
+
+OR,
+
+`string text line 1
+ string text line 2`
+
+OR,
+
+`string text ${expression} string text`
+
+OR,
+
+tagFunction `string text ${expression} string text`
+
+
+Study in detail from MDN Official document:
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
+
+
+----------------------------------------
+
+15. Array and Object De-structuring
+
+Array De-structuring
+
+var thing = ["Table", "Chair", "Fan"];
+var [a, b, c] = thing;
+
+console.log(a); // Output: Table
+console.log(b); //Output: Chair
+console.log(c); //Output: Fan
+
+
+Object De-structuring
+
+let person = {
+    uName: "Yubaraj Rai",
+    phone: "9852079777",
+    addr: "Bhojpur, Nepal",
+    dob: "1989/02/02",
+    g: "M"
+};
+
+let {uName, phone, addr, dob, g} = person;
+console.log(uName, phone, addr, dob, g); // checking destructured object members
+
+
+
+
+De-structuring Returned Arrays
+
+De-structuring makes working with a function that returns an array as a value more precise.
+It works for all iterable.
+
+function runners(){
+    return ["Sandra", "Ola", "Chi"];
+}
+
+var [a, b, c] = runners();
+console.log(a); //Output: Sandra
+console.log(b); //Output: Ola
+console.log(c); //Output: Chi
+
+
+Default Value
+De-structuring allows a default value to be assigned to a variable if no value or undefined is passed.
+It is like providing a fallback when nothing is found.
+
+var a, b;
+[a = 40, b = 4] = [];
+console.log(a); //Output: 40
+console.log(b); //Output: 4
+
+[a = 40, b = 4] = [1, 23];
+console.log(a); //Output: 1
+console.log(b); //Output: 23
+
+
+
+Ignoring Some Values
+
+var a, b;
+[a, , b] = ["Lordy", "Crown", "Roses"];
+
+console.log(a); //Output: Lordy
+console.log(b); //Output: Roses
+
+
+----------------------------------------
+
+16. Rest Parameter and Spread Operator
+
+i. Functions Rest Paramenter (...args):
+    The rest parameter syntax allows a function to accept an indefinite number of arguments as an array,
+    providing a way to represent variadic functions in JavaScript.
+
+    function sum(...args) {
+          let total = 0;
+          for (const arg of args) {
+              total += arg;
+          }
+           return total;
+    }
+
+    let s1 = sum(1, 2, 3),
+        s2 = sum(1, 2, 3, 4);
+    
+     console.log(s1);
+    // Expected output: 6
+
+    console.log(s2);
+    // Expected output: 10
+
+
+ii. Functions Spread Operator:
+    Spread syntax looks exactly like rest syntax.
+    In a way, spread syntax is the opposite of rest syntax.
+    Spread syntax "expands" an array into its elements,
+    while rest syntax collects multiple elements and "condenses" them into a single element.
+   
+   
+    With "apply" prototype:
+
+    function myFunction(x, y, z) {}
+    const args = [0, 1, 2];
+    myFunction.apply(null, args);
+
+
+    With Spread Syntax:
+
+    function myFunction(x, y, z) {}
+    const args = [0, 1, 2];
+    myFunction(...args);
+
+
+iii. MDN official document:
+    - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/rest_parameters
+    - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
+----------------------------------------
+
+17. Classes
+Classes are a template for creating objects. They encapsulate data with code to work on that data. Classes in JS are built on prototypes but also have some syntax and semantics that are unique to classes.
+
+class Person {
+    //Class controls methods and properties
+    constructor() { //construction
+        this.name = "Yubaraj Rai";
+    }
+
+    get data() { //getter 
+        return "Hi class";
+    }
+
+   //Note: We call 'method' to member functions of class
+ 
+   //Your task: understand and use 'setter'
+}
+
+class P1 extends Person { //inheritance of parent class on child
+    constructor() {
+        super(); //to inherit all the constructed members from parent
+    }
+
+    get dataChild() {
+        return "Hi child";
+    }
+}
+
+let person1 = new P1; //making object with class/blueprint data block
+
+document.write("<hr/>" + person1.data); //accessing members with dot ( . ) operator from object
+document.write("<hr/>" + person1.name);
+document.write("<hr/>" + person1.dataChild);
+
+
+MDN Official Document
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
+
+----------------------------------------
+
+18. Promises
+       The  object represents the eventual completion (or failure) of an asynchronous operation and its        
+        resulting value. It is better than callback hell. 
+
+
+         Here, understanding the Event Loop optimization/update of modern JavaScript:
+         - Callbacks (known as Callback Hell)
+         - Promises 
+         - Async/Await 
+
+
+Note: we've studied callback in ES5.
+
+
+Promises Example:
+        let x = 10;
+        let y = 5;
+        new Promise((res, rej) => {
+            if(x < y) res(`${x} is greater than ${y}. Correct!`);
+            else rej("Oops! error detected.");  
+           
+            //Note: reject is optional parameter
+
+        }).then((value) => `${value} Go on.`)
+        .then((valule) => `${value} Final`)
+        .then((value) => {
+            document.write(value);
+        }).catch((err) => {
+            document.write(err);
+        }).finally(() => {
+            document.write(`Program executed!`);
+        });
+         // res = resolve,     rej = reject
+
+        //OR, another way by assigning on variable
+
+        let data = new Promise((res) => {
+            res("Hey!");
+        });
+        data.then((value) => `${value} finalized.`);
+        data.then((value) => {
+            document.write(value);
+        });
+
+
+  Note: Check attached promises.png for the flow understanding.
+  MDN Official Document 
+   - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
+
+   On modern working scenario of JavaScript, you should understand Async/Await 
+    - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function
+
+----------------------------------------
+
+19. Higher Order Function
+It works as a 
+
+JavaScript: Iterators.
+It is an ES6 feature. Higher-order functions are functions that make use of functions as either their argument or their return value.
+Using functions in both roles is unnecessary; if a function works with either of the two, it becomes a higher-order function.
+In JavaScript functions map, filter and reduce are examples of built-in higher-order functions.
+
+Note: Simple, we can say, Higher Order Function is modern form in ES6 of ES5 callbacks.
+
+*Study attached PDF (js-iterators.pdf) document for more detail.
+----------------------------------------
+
+20. Exception Handling
+
+    What is Exception Handling?
+   
+    In programming, exception handling is a process or method used
+    for handling the abnormal statements in the code and executing them.
+   
+    It also enables to handle the flow control of the code/program.
+   
+    For handling the code, various handlers are used
+    that process the exception and execute the code.
+   
+    For example, the Division of a non-zero value with zero will result
+    into infinity always, and it is an exception. Thus, with the help
+    of exception handling, it can be executed and handled.
+   
+   
+   
+    In exception handling:
+   
+    A throw statement is used to raise an exception.
+    It means when an abnormal condition occurs,
+    an exception is thrown using throw.
+   
+    The thrown exception is handled by wrapping the code
+    into the try…catch block.
+    If an error is present, the catch block will execute,
+    else only the try block statements will get executed.
+   
+    Throw, and Try...Catch...Finally
+    - The try statement defines a code block to run (to try).
+    - The catch statement defines a code block to handle any error.
+    - The finally statement defines a code block to run regardless of the result.
+    - The throw statement defines a custom error.
+   
+   
+    There can be different types of errors
+    which may disturb the proper execution of the program.
+   
+    Types of Errors
+    While coding, there can be three types of errors in the code:
+   
+    #1 Syntax Error: When a user makes a mistake in the pre-defined syntax of
+    a programming language, a syntax error may appear.
+   
+    #2 Runtime Error: When an error occurs during the execution of the program,
+    such an error is known as Runtime error.
+    The codes which create runtime errors are known as Exceptions.
+    Thus, exception handlers are used for handling runtime errors.
+   
+    #3 Logical Error: An error which occurs when there is any logical mistake
+    in the program that may not produce the desired output,
+    and may terminate abnormally. Such an error is known as Logical error.
+   
+   
+   
+    Error Object
+    When a runtime error occurs, it creates and throws an Error object.
+    Such an object can be used as a base for the user-defined exceptions too.
+    An error object has two properties:
+    - name: This is an object property that sets or returns an error name.
+    - message: This property returns an error message in the string form.
+   
+    Although Error is a generic constructor,
+    there are following standard built-in error types or error constructors
+    beside it:
+   
+    - EvalError
+    - InternalError
+    - RangeError
+    - ReferenceError
+    - SyntaxError
+    - TypeError
+    - URIError
+   
+
+   Error Name Values
+   Six different values can be returned by the error name property:
+   - EvalError  An error has occurred in the eval() function
+     (Newer versions of JavaScript do not throw EvalError. Use SyntaxError instead.)
+   - RangeError A number "out of range" has occurred
+   - ReferenceError An illegal reference has occurred
+   - SyntaxError    A syntax error has occurred
+   - TypeError  A type error has occurred
+   - URIError   An error in encodeURI() has occurred
+
+
+    Code Examples:
+   <script>
+  //RangeError
+    let num = 1;
+    try {
+        num.toPrecision(500);   // A number cannot have 500 significant digits
+    }
+    catch(err) {
+        document.write("<br/>" + err.name);
+    }
+
+   //ReferenceError, A ReferenceError is thrown if you use (reference)
+  //a variable that has not been declared:
+    let x = 5;
+    try {
+        x = y + 1;   // y cannot be used (referenced)
+    }
+    catch(err) {
+        document.write("<br/>" + err.name);
+    }
+
+    //SyntaxError
+    try {
+        eval("alert('Hello)");   // Missing ' will produce an error
+    }
+    catch(err) {
+        document.write("<br/>" + err.name);
+    }
+
+   //TypeError, A TypeError is thrown if you use
+   //a value that is outside the range of expected types:
+
+    let num1 = 1;
+    try {
+        num1.toUpperCase();   // You cannot convert a number to upper case
+    }
+    catch(err) {
+        document.write("<br/>" + err.name);
+    }
+
+   //URIError (Uniform Resource Identifier)
+   // A URIError is thrown if you use illegal characters in a URI function:
+    try {
+        decodeURI("%%%");   // You cannot URI decode percent signs
+        //correct URI: https://yubarajrai.name.np/#contact
+    }
+    catch(err) {
+        document.write("<br/>" + err.name);
+    }
+
+   </script>
+
+    Exception Handling Statements
+    There are following statements that handle if any exception occurs:
+    - throw statements
+    - try…catch statements
+    - try…catch…finally statements.
+   
+    These exception handling statements are discussed in the next section.
