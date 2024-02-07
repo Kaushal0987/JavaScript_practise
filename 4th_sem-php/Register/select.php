@@ -28,8 +28,8 @@
      <th>E-mail</th>
      <th>Phone</th>
      <th>Address</th>
-     <th>Bio</th>
      <th>Photo</th>
+     <th>Bio</th>
      <th>Action</th>
 
     </thead>
@@ -42,8 +42,8 @@
      <td><?php echo $row['email']; ?></td>
      <td><?php echo $row['phone']; ?></td>
      <td><?php echo $row['address']; ?></td>
-     <td><?php echo $row['bio']; ?></td>
      <td><?php echo $row['photo']; ?></td>
+     <td><?php echo $row['bio']; ?></td>
      <td>
       <a href="edit.php" ? uid = <?php echo $row['id']; ?>>Edit</a>
       <a href="delete.php" ? uid = <?php echo $row['id']; ?>>Delete</a>

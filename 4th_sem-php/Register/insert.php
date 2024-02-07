@@ -5,9 +5,9 @@
   $email = $_POST['email'];
   $phone = $_POST['phone'];
   $address = $_POST['address'];
-  $bio = $_POST['bio'];
   $photo = $_FILES['photo'];
   $photo_name = $_FILES['photo']['name'];
+  $bio = $_POST['bio'];
 
   //validation of photo
   if($_FILES['photo']['error'] == 0){
@@ -30,7 +30,7 @@
 
   include("connection.php");
 
-  $sql = "INSERT INTO users(fullname, email, phone, address, bio, photo) VALUES ('$fullname','$email','$phone','$address','$bio','$photo')";
+  $sql = "INSERT INTO users(fullname, email, phone, address, photo, bio) VALUES ('$fullname','$email','$phone','$address','$photo','$bio')";
 
   $res = mysqli_query($conn, $sql);
 
